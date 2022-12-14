@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MushhoodModelStoreContainer" CdmEntityContainer="MushhoodEntities">
+    <EntitySetMapping Name="alphas">
+      <EntityTypeMapping TypeName="MushhoodModel.alpha">
+        <MappingFragment StoreEntitySet="alpha">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="myname" ColumnName="myname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="betas">
+      <EntityTypeMapping TypeName="MushhoodModel.beta">
+        <MappingFragment StoreEntitySet="beta">
+          <ScalarProperty Name="rollnum" ColumnName="rollnum" />
+          <ScalarProperty Name="profession" ColumnName="profession" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

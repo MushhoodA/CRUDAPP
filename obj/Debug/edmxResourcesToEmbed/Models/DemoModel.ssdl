@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MushhoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="alpha">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="myname" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="beta">
+    <Key>
+      <PropertyRef Name="rollnum" />
+    </Key>
+    <Property Name="rollnum" Type="int" Nullable="false" />
+    <Property Name="profession" Type="varchar" MaxLength="50" />
+    <Property Name="id" Type="int" />
+  </EntityType>
+  <Association Name="FK__beta__id__29572725">
+    <End Role="alpha" Type="Self.alpha" Multiplicity="0..1" />
+    <End Role="beta" Type="Self.beta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="alpha">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="beta">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MushhoodModelStoreContainer">
+    <EntitySet Name="alpha" EntityType="Self.alpha" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="beta" EntityType="Self.beta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__beta__id__29572725" Association="Self.FK__beta__id__29572725">
+      <End Role="alpha" EntitySet="alpha" />
+      <End Role="beta" EntitySet="beta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
